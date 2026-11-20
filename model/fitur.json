@@ -1,0 +1,130 @@
+{
+  "fitur": [
+    "Application mode",
+    "Course",
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Tuition fees up to date",
+    "Scholarship holder",
+    "Age at enrollment",
+    "Curricular units 1st sem (enrolled)",
+    "Curricular units 1st sem (evaluations)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 2nd sem (enrolled)",
+    "Curricular units 2nd sem (evaluations)",
+    "Curricular units 2nd sem (approved)",
+    "Curricular units 2nd sem (grade)"
+  ],
+  "referensi": {
+    "Application mode": {
+      "median": 17.0,
+      "modus": 1.0,
+      "min": 1.0,
+      "max": 57.0
+    },
+    "Course": {
+      "median": 9238.0,
+      "modus": 9500.0,
+      "min": 33.0,
+      "max": 9991.0
+    },
+    "Previous qualification (grade)": {
+      "median": 133.1,
+      "modus": 133.1,
+      "min": 95.0,
+      "max": 190.0
+    },
+    "Admission grade": {
+      "median": 126.0,
+      "modus": 130.0,
+      "min": 95.0,
+      "max": 190.0
+    },
+    "Tuition fees up to date": {
+      "median": 1.0,
+      "modus": 1.0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Scholarship holder": {
+      "median": 0.0,
+      "modus": 0.0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Age at enrollment": {
+      "median": 20.0,
+      "modus": 18.0,
+      "min": 17.0,
+      "max": 70.0
+    },
+    "Curricular units 1st sem (enrolled)": {
+      "median": 6.0,
+      "modus": 6.0,
+      "min": 0.0,
+      "max": 26.0
+    },
+    "Curricular units 1st sem (evaluations)": {
+      "median": 8.0,
+      "modus": 8.0,
+      "min": 0.0,
+      "max": 45.0
+    },
+    "Curricular units 1st sem (approved)": {
+      "median": 5.0,
+      "modus": 6.0,
+      "min": 0.0,
+      "max": 26.0
+    },
+    "Curricular units 1st sem (grade)": {
+      "median": 12.32,
+      "modus": 0.0,
+      "min": 0.0,
+      "max": 18.875
+    },
+    "Curricular units 2nd sem (enrolled)": {
+      "median": 6.0,
+      "modus": 6.0,
+      "min": 0.0,
+      "max": 23.0
+    },
+    "Curricular units 2nd sem (evaluations)": {
+      "median": 8.0,
+      "modus": 8.0,
+      "min": 0.0,
+      "max": 33.0
+    },
+    "Curricular units 2nd sem (approved)": {
+      "median": 5.0,
+      "modus": 6.0,
+      "min": 0.0,
+      "max": 20.0
+    },
+    "Curricular units 2nd sem (grade)": {
+      "median": 12.2,
+      "modus": 0.0,
+      "min": 0.0,
+      "max": 18.571428571428573
+    }
+  },
+  "dikecualikan": {
+    "sensitif": [
+      "Gender",
+      "Marital status",
+      "International",
+      "Educational special needs",
+      "Displaced"
+    ],
+    "sulit_diisi": [
+      "Nacionality",
+      "Mother's qualification",
+      "Father's qualification",
+      "Mother's occupation",
+      "Father's occupation",
+      "Unemployment rate",
+      "Inflation rate",
+      "GDP"
+    ]
+  }
+}

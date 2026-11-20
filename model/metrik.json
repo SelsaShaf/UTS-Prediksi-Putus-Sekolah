@@ -1,0 +1,255 @@
+{
+  "dataset": {
+    "jumlah_data": 4424,
+    "jumlah_fitur": 36,
+    "distribusi": {
+      "Graduate": 2209,
+      "Dropout": 1421,
+      "Enrolled": 794
+    }
+  },
+  "split": {
+    "latih": 3539,
+    "uji": 885
+  },
+  "skenario_a": [
+    {
+      "n_estimators": 10,
+      "acc_train": 0.9895450692285956,
+      "acc_test": 0.7435028248587571,
+      "f1_test": 0.6656859763335631,
+      "recall_enrolled": 0.34591194968553457,
+      "recall_dropout": 0.7605633802816901,
+      "cv_f1": 0.6689256559842467
+    },
+    {
+      "n_estimators": 50,
+      "acc_train": 0.9997174343034756,
+      "acc_test": 0.7581920903954802,
+      "f1_test": 0.67671767168261,
+      "recall_enrolled": 0.33962264150943394,
+      "recall_dropout": 0.7535211267605634,
+      "cv_f1": 0.6858382730421886
+    },
+    {
+      "n_estimators": 100,
+      "acc_train": 1.0,
+      "acc_test": 0.7672316384180791,
+      "f1_test": 0.6916279003766359,
+      "recall_enrolled": 0.3710691823899371,
+      "recall_dropout": 0.7464788732394366,
+      "cv_f1": 0.6851723808500556
+    },
+    {
+      "n_estimators": 200,
+      "acc_train": 1.0,
+      "acc_test": 0.7649717514124293,
+      "f1_test": 0.6819213537807958,
+      "recall_enrolled": 0.33962264150943394,
+      "recall_dropout": 0.75,
+      "cv_f1": 0.686290456905968
+    },
+    {
+      "n_estimators": 500,
+      "acc_train": 1.0,
+      "acc_test": 0.7819209039548023,
+      "f1_test": 0.706333499967208,
+      "recall_enrolled": 0.37735849056603776,
+      "recall_dropout": 0.7640845070422535,
+      "cv_f1": 0.6928028914755173
+    }
+  ],
+  "skenario_b": [
+    {
+      "max_depth": 3,
+      "acc_train": 0.7264764057643402,
+      "acc_test": 0.7299435028248588,
+      "f1_test": 0.5280646224859874,
+      "recall_enrolled": 0.0,
+      "recall_dropout": 0.795774647887324,
+      "cv_f1": 0.5238706248693379,
+      "selisih_train_test": -0.003467097060518509
+    },
+    {
+      "max_depth": 5,
+      "acc_train": 0.7745125741734953,
+      "acc_test": 0.7581920903954802,
+      "f1_test": 0.6191383364064739,
+      "recall_enrolled": 0.13836477987421383,
+      "recall_dropout": 0.7922535211267606,
+      "cv_f1": 0.6210486944530753,
+      "selisih_train_test": 0.016320483778015094
+    },
+    {
+      "max_depth": 10,
+      "acc_train": 0.9141000282565697,
+      "acc_test": 0.7694915254237288,
+      "f1_test": 0.6837351352365615,
+      "recall_enrolled": 0.32075471698113206,
+      "recall_dropout": 0.7535211267605634,
+      "cv_f1": 0.6715632123231059,
+      "selisih_train_test": 0.14460850283284088
+    },
+    {
+      "max_depth": 20,
+      "acc_train": 0.9997174343034756,
+      "acc_test": 0.7785310734463277,
+      "f1_test": 0.7015306917750695,
+      "recall_enrolled": 0.36477987421383645,
+      "recall_dropout": 0.7711267605633803,
+      "cv_f1": 0.6959264306067987,
+      "selisih_train_test": 0.22118636085714793
+    },
+    {
+      "max_depth": "Tanpa batas",
+      "acc_train": 1.0,
+      "acc_test": 0.7819209039548023,
+      "f1_test": 0.706333499967208,
+      "recall_enrolled": 0.37735849056603776,
+      "recall_dropout": 0.7640845070422535,
+      "cv_f1": 0.6928028914755173,
+      "selisih_train_test": 0.2180790960451977
+    }
+  ],
+  "skenario_c": [
+    {
+      "class_weight": "Tanpa bobot",
+      "acc_train": 0.9997174343034756,
+      "acc_test": 0.7785310734463277,
+      "f1_test": 0.7015306917750695,
+      "recall_enrolled": 0.36477987421383645,
+      "recall_dropout": 0.7711267605633803,
+      "cv_f1": 0.6959264306067987
+    },
+    {
+      "class_weight": "balanced",
+      "acc_train": 1.0,
+      "acc_test": 0.7661016949152543,
+      "f1_test": 0.6892221037148575,
+      "recall_enrolled": 0.36477987421383645,
+      "recall_dropout": 0.7429577464788732,
+      "cv_f1": 0.686030048197696
+    },
+    {
+      "class_weight": "balanced_subsample",
+      "acc_train": 1.0,
+      "acc_test": 0.7649717514124293,
+      "f1_test": 0.6884835025792008,
+      "recall_enrolled": 0.3710691823899371,
+      "recall_dropout": 0.7359154929577465,
+      "cv_f1": 0.6906345459174335
+    }
+  ],
+  "skenario_d": [
+    {
+      "kelompok": "Pendaftaran saja",
+      "jumlah_fitur": 24,
+      "acc_train": 1.0,
+      "acc_test": 0.6203389830508474,
+      "f1_test": 0.5072286116605214,
+      "recall_enrolled": 0.12578616352201258,
+      "recall_dropout": 0.6161971830985915,
+      "cv_f1": 0.5186164992667966
+    },
+    {
+      "kelompok": "Pendaftaran + Semester 1",
+      "jumlah_fitur": 30,
+      "acc_train": 1.0,
+      "acc_test": 0.735593220338983,
+      "f1_test": 0.6327987420749309,
+      "recall_enrolled": 0.24528301886792453,
+      "recall_dropout": 0.7288732394366197,
+      "cv_f1": 0.6499344576277531
+    },
+    {
+      "kelompok": "Semua fitur (+ Semester 2)",
+      "jumlah_fitur": 36,
+      "acc_train": 0.9994348686069511,
+      "acc_test": 0.7796610169491526,
+      "f1_test": 0.7080122491519353,
+      "recall_enrolled": 0.39622641509433965,
+      "recall_dropout": 0.75,
+      "cv_f1": 0.6883511810021625
+    }
+  ],
+  "parameter_terbaik": {
+    "n_estimators": 500,
+    "max_depth": 20,
+    "class_weight": null
+  },
+  "model_penuh": {
+    "jumlah_fitur": 36,
+    "acc_test": 0.7785310734463277,
+    "f1_test": 0.7015306917750695
+  },
+  "model_akhir": {
+    "jumlah_fitur": 15,
+    "fitur": [
+      "Application mode",
+      "Course",
+      "Previous qualification (grade)",
+      "Admission grade",
+      "Tuition fees up to date",
+      "Scholarship holder",
+      "Age at enrollment",
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 2nd sem (enrolled)",
+      "Curricular units 2nd sem (evaluations)",
+      "Curricular units 2nd sem (approved)",
+      "Curricular units 2nd sem (grade)"
+    ],
+    "acc_train": 1.0,
+    "acc_test": 0.7615819209039548,
+    "f1_macro": 0.6771864550549166,
+    "cv_f1": 0.6777659074070304,
+    "laporan": {
+      "Dropout": {
+        "precision": 0.7940074906367042,
+        "recall": 0.7464788732394366,
+        "f1-score": 0.7695099818511797,
+        "support": 284.0
+      },
+      "Enrolled": {
+        "precision": 0.5353535353535354,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.4108527131782945,
+        "support": 159.0
+      },
+      "Graduate": {
+        "precision": 0.7880539499036608,
+        "recall": 0.9253393665158371,
+        "f1-score": 0.8511966701352758,
+        "support": 442.0
+      }
+    },
+    "matriks": [
+      [
+        212,
+        24,
+        48
+      ],
+      [
+        44,
+        53,
+        62
+      ],
+      [
+        11,
+        22,
+        409
+      ]
+    ],
+    "kelas": [
+      "Dropout",
+      "Enrolled",
+      "Graduate"
+    ]
+  },
+  "versi": {
+    "sklearn": "1.3.1",
+    "python": "3.11.8"
+  }
+}

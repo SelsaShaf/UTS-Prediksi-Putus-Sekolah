@@ -1,0 +1,53 @@
+{
+  "Dropout": {
+    "Application mode": 39,
+    "Course": 8014,
+    "Previous qualification (grade)": 133.1,
+    "Admission grade": 100.0,
+    "Tuition fees up to date": 1,
+    "Scholarship holder": 0,
+    "Age at enrollment": 37,
+    "Curricular units 1st sem (enrolled)": 6,
+    "Curricular units 1st sem (evaluations)": 0,
+    "Curricular units 1st sem (approved)": 0,
+    "Curricular units 1st sem (grade)": 0.0,
+    "Curricular units 2nd sem (enrolled)": 6,
+    "Curricular units 2nd sem (evaluations)": 0,
+    "Curricular units 2nd sem (approved)": 0,
+    "Curricular units 2nd sem (grade)": 0.0
+  },
+  "Enrolled": {
+    "Application mode": 17,
+    "Course": 9147,
+    "Previous qualification (grade)": 130.0,
+    "Admission grade": 122.0,
+    "Tuition fees up to date": 1,
+    "Scholarship holder": 0,
+    "Age at enrollment": 20,
+    "Curricular units 1st sem (enrolled)": 5,
+    "Curricular units 1st sem (evaluations)": 8,
+    "Curricular units 1st sem (approved)": 2,
+    "Curricular units 1st sem (grade)": 10.5,
+    "Curricular units 2nd sem (enrolled)": 5,
+    "Curricular units 2nd sem (evaluations)": 11,
+    "Curricular units 2nd sem (approved)": 4,
+    "Curricular units 2nd sem (grade)": 12.25
+  },
+  "Graduate": {
+    "Application mode": 1,
+    "Course": 9500,
+    "Previous qualification (grade)": 137.0,
+    "Admission grade": 126.5,
+    "Tuition fees up to date": 1,
+    "Scholarship holder": 1,
+    "Age at enrollment": 19,
+    "Curricular units 1st sem (enrolled)": 8,
+    "Curricular units 1st sem (evaluations)": 8,
+    "Curricular units 1st sem (approved)": 8,
+    "Curricular units 1st sem (grade)": 13.57625,
+    "Curricular units 2nd sem (enrolled)": 8,
+    "Curricular units 2nd sem (evaluations)": 8,
+    "Curricular units 2nd sem (approved)": 8,
+    "Curricular units 2nd sem (grade)": 13.57625
+  }
+}
