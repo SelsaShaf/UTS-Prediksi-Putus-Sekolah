@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panduan | Cek Risiko Putus Kuliah</title>
+  <meta name="description" content="Alat bantu untuk memperkirakan risiko putus kuliah mahasiswa menggunakan algoritma Random Forest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <a class="lompat" href="#isi">Lompat ke isi halaman</a>
+
+  <header class="situs-header">
+    <div class="wadah header-dalam">
+      <a class="merek" href="{{ url_for('index') }}">Cek Risiko Putus Kuliah</a>
+      <button class="nav-tombol" type="button" aria-expanded="false" aria-controls="menu-utama">Menu</button>
+      <nav id="menu-utama" class="menu" aria-label="Menu utama">
+        <a href="{{ url_for('index') }}">Beranda</a>
+        <a href="{{ url_for('halaman_prediksi') }}">Cek Risiko</a>
+        <a href="{{ url_for('tentang_model') }}">Tentang Model</a>
+        <a href="{{ url_for('panduan') }}" aria-current="page">Panduan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="isi">
+    <section class="judul-halaman">
+      <div class="wadah">
+        <h1>Panduan Penggunaan</h1>
+        <p>Cara mengisi formulir, arti istilah, dan cara membaca hasil.</p>
+      </div>
+    </section>
+
+    <section class="wadah bagian">
+      <h2>Cara mengisi formulir</h2>
+      <ol class="daftar-saran">
+        <li>Buka halaman <a href="{{ url_for('halaman_prediksi') }}">Cek Risiko</a>. Anda bisa menekan tombol contoh untuk melihat bentuk isian yang benar.</li>
+        <li>Isi setiap kolom. Penjelasan dan rentang yang diterima tertulis di bawah nama kolom.</li>
+        <li>Tekan <strong>Lanjut</strong> untuk pindah langkah. Jika ada kolom yang kosong atau di luar rentang, pesan merah akan muncul dan Anda tidak bisa lanjut sebelum memperbaikinya.</li>
+        <li>Di langkah terakhir, tekan <strong>Lihat Hasil Prediksi</strong>.</li>
+        <li>Di halaman hasil, tombol <strong>Ubah Data dan Hitung Ulang</strong> mengembalikan Anda ke formulir dengan isian yang sama.</li>
+      </ol>
+      <p>Angka desimal boleh ditulis dengan titik atau koma (misalnya 12,5 atau 12.5).</p>
+    </section>
+
+    <section class="bagian bagian-warna" id="batas-risiko">
+      <div class="wadah">
+        <h2>Cara membaca tingkat risiko</h2>
+        <p>Tingkat risiko ditentukan dari perkiraan peluang putus kuliah. Batas ini adalah kesepakatan praktis untuk memudahkan membaca hasil, bukan standar baku.</p>
+        <div class="gulir"><table class="tabel tabel-rata">
+          <thead><tr><th>Perkiraan peluang putus kuliah</th><th>Tingkat risiko</th></tr></thead>
+          <tbody>
+            <tr><td>di bawah 25%</td><td><span class="chip chip-rendah">Rendah</span></td></tr>
+            <tr><td>25% sampai di bawah 50%</td><td><span class="chip chip-sedang">Sedang</span></td></tr>
+            <tr><td>50% atau lebih</td><td><span class="chip chip-tinggi">Tinggi</span></td></tr>
+          </tbody>
+        </table></div>
+        <h3>Tiga kemungkinan hasil akhir</h3>
+        <dl class="glosarium">
+          <dt>{{ nama_kelas["Dropout"] }}</dt><dd>Mahasiswa berhenti kuliah sebelum menyelesaikan program studi.</dd>
+          <dt>{{ nama_kelas["Enrolled"] }}</dt><dd>Pada akhir masa studi normal, mahasiswa masih terdaftar dan belum lulus.</dd>
+          <dt>{{ nama_kelas["Graduate"] }}</dt><dd>Mahasiswa lulus pada akhir masa studi normal.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="wadah bagian">
+      <h2>Arti istilah di dataset, dengan contoh</h2>
+      <p>Nama kolom pada dataset sumber memakai bahasa Inggris. Tabel ini menjelaskan artinya, dengan contoh untuk satu mahasiswa yang mengambil 6 mata kuliah di semester 1.</p>
+      <div class="gulir"><table class="tabel">
+        <thead><tr><th>Istilah di dataset</th><th>Artinya</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Curricular units (enrolled)</th><td>Jumlah mata kuliah yang diambil (di-KRS-kan) pada semester itu.</td><td>Mengambil 6 mata kuliah: isi 6.</td></tr>
+          <tr><th scope="row">Curricular units (evaluations)</th><td>Jumlah ujian atau penilaian yang diikuti, termasuk ujian ulang.</td><td>6 mata kuliah dengan 2 ujian ulang: isi 8.</td></tr>
+          <tr><th scope="row">Curricular units (approved)</th><td>Jumlah mata kuliah yang dinyatakan lulus.</td><td>Dari 6 mata kuliah, 5 lulus: isi 5.</td></tr>
+          <tr><th scope="row">Curricular units (grade)</th><td>Rata-rata nilai semester pada skala 0-20.</td><td>Rata-rata 13,4: isi 13,4.</td></tr>
+          <tr><th scope="row">Curricular units (credited)</th><td>Mata kuliah yang diakui dari studi sebelumnya sehingga tidak perlu diambil lagi.</td><td>Tidak ada yang diakui: isi 0.</td></tr>
+          <tr><th scope="row">Curricular units (without evaluations)</th><td>Mata kuliah yang diambil tetapi tidak diikuti satu pun penilaian.</td><td>Semua mata kuliah diikuti ujiannya: isi 0.</td></tr>
+          <tr><th scope="row">Admission grade</th><td>Nilai akhir seleksi masuk pada skala 0-200.</td><td>Nilai seleksi 128,5: isi 128,5.</td></tr>
+          <tr><th scope="row">Application order</th><td>Urutan pilihan program studi saat mendaftar. 0 berarti pilihan pertama.</td><td>Diterima di pilihan kedua: isi 1.</td></tr>
+          <tr><th scope="row">Tuition fees up to date</th><td>Apakah biaya kuliah saat ini terbayar tepat waktu.</td><td>Tidak ada tunggakan: pilih Ya.</td></tr>
+          <tr><th scope="row">Debtor</th><td>Apakah mahasiswa tercatat memiliki tunggakan pembayaran ke kampus.</td><td>Ada tunggakan: pilih Ya.</td></tr>
+        </tbody>
+      </table></div>
+      <dl class="glosarium">
+        <dt>Skala nilai 0-20 dan 0-200</dt><dd>Sistem penilaian di Portugal. Nilai semester memakai skala 0-20 (umumnya 10 ke atas dianggap lulus), sedangkan nilai seleksi masuk dan pendidikan sebelumnya memakai skala 0-200.</dd>
+        <dt>Poin persentase</dt><dd>Selisih antara dua persentase. Naik dari 20% ke 30% berarti naik 10 poin persentase.</dd>
+        <dt>Nilai umum</dt><dd>Nilai yang paling sering muncul (untuk pilihan) atau nilai tengah (untuk angka) pada data latih, dipakai sebagai pembanding di penjelasan faktor.</dd>
+      </dl>
+    </section>
+
+    <section class="wadah bagian" style="padding-top:0">
+      <h2>Pertanyaan yang sering muncul</h2>
+      <details class="kartu rincian"><summary>Apakah data saya disimpan?</summary><p>Tidak. Isian hanya diproses untuk menghitung hasil dan tidak ditulis ke basis data atau berkas.</p></details>
+      <details class="kartu rincian"><summary>Mengapa pilihan program studi memakai daftar dari Portugal?</summary><p>Model dilatih dengan dataset publik dari sebuah institusi di Portugal, sehingga pilihan program studi dan jalur masuk mengikuti data itu. Untuk kampus lain, gunakan pilihan yang paling mendekati dan anggap hasilnya sebagai gambaran umum.</p></details>
+      <details class="kartu rincian"><summary>Mengapa jenis kelamin dan status pernikahan tidak ditanyakan?</summary><p>Atribut sensitif sengaja dikeluarkan agar penilaian risiko tidak membedakan mahasiswa karena identitas pribadinya.</p></details>
+      <details class="kartu rincian"><summary>Hasilnya tinggi. Apakah berarti saya pasti putus kuliah?</summary><p>Tidak. Hasil hanyalah perkiraan dari pola data historis. Gunakan sebagai pemicu percakapan dengan dosen wali atau konselor, bukan sebagai vonis.</p></details>
+      <details class="kartu rincian"><summary>Apa arti "faktor yang menaikkan atau menurunkan risiko"?</summary><p>Alat ini mengganti satu isian Anda dengan nilai yang paling umum, lalu melihat seberapa berubah perkiraan. Ini menunjukkan pola yang dipelajari model, bukan sebab-akibat.</p></details>
+    </section>
+  </main>
+
+  <footer class="situs-footer">
+    <div class="wadah footer-grid">
+      <div>
+        <h2>Tentang alat ini</h2>
+        <p>Dibuat untuk tugas UTS mata kuliah Pembelajaran Mesin. Hasilnya adalah perkiraan statistik sebagai alat bantu diskusi, bukan keputusan akademik. Data yang Anda isi tidak disimpan.</p>
+      </div>
+      <div>
+        <h2>Sumber data</h2>
+        <p>Realinho, V., Vieira Martins, M., Machado, J., &amp; Baptista, L. (2021). <em>Predict Students' Dropout and Academic Success</em>. UCI Machine Learning Repository. <a href="https://doi.org/10.24432/C5MC89">doi.org/10.24432/C5MC89</a> (lisensi CC BY 4.0).</p>
+      </div>
+      {% if foto_kredit %}
+      <div>
+        <h2>Kredit foto</h2>
+        <ul class="daftar-polos">{% for k in foto_kredit %}<li>{{ k }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+    </div>
+    <p class="hak-cipta wadah">&copy; {{ tahun }} Proyek UTS Pembelajaran Mesin</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>
